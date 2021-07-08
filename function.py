@@ -10,5 +10,5 @@ with open("index.html", "r") as file:
 soup = bs4.BeautifulSoup(content,"html.parser")
 #sel = soup.select("div.d0N9PZYfeg a")
 for titles in soup.findAll('a', href=True):
-    print(i, titles['href'])
+    print(titles['href'])
     #print(re.findall(pattern, str(titles)))
