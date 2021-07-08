@@ -4,7 +4,7 @@ import re
 import lxml
 
 #url = "https://market.yandex.ru/catalog--smartfony-v-volzhskom/54726/list?cpa=0&hid=91491&track=pieces&onstock=1&page=5&local-offers-first=0"
-pattern =  re.compile('/product--.*')
+pattern =  re.compile('/product--.*track=srchbtn.*')
 links = []
 with open("index.html", "r") as file:
     content = file.read()
@@ -14,4 +14,5 @@ for titles in soup.findAll('a', href=True):
     links.append(a)
 templist = list(filter(None, links))
 for x in templist:
-    print (x)
+    print(x)
+
